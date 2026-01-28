@@ -165,8 +165,13 @@ const serviceDetails: Record<string, {
     ]
   }
 };
+type ServicePageProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
 
-export default  function ServicePage({ params }) {
+export default  function ServicePage({ params }: ServicePageProps) {
   const resolvedParams = use(params);
   const service =  serviceDetails[resolvedParams.id];
 
